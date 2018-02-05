@@ -1,0 +1,149 @@
+!
+! version core: 2.1.2
+ ! last commit: Sun Jan 14 23:03:05 WIB 2018
+!
+interface loopback lo1
+ enable
+ ip address 10.251.251.2/32
+!
+interface ethernet ge0
+ description SW.ZXR10:22
+ enable
+!
+interface ethernet ge1
+ description SW.V1910-02:4
+ enable
+!
+interface ethernet ge2
+ description SW.2510-01:28
+ enable
+!
+interface ethernet ge3
+ description SW.OS6450:19
+ enable
+!
+interface ethernet ge4
+ enable
+!
+interface ethernet ge5
+ enable
+!
+interface ethernet xe0
+ description SW.X650-GRD:10
+ enable
+ mtu 9000
+ options
+  smp_affinity auto
+  tso off
+ qlen 10Gbit
+!
+interface ethernet xe1
+ description SW.X650-GRD:7
+ enable
+ mtu 2000
+ options
+  smp_affinity auto
+  tso off
+ qlen 10Gbit
+!
+interface vlan ge0.3000
+ description REMOTE-DUMMY
+ ip address 172.31.255.2/24
+!
+interface vlan ge3.897
+ description PTP.BR2-SRK
+ enable
+ ip address 49.128.177.185/30
+!
+interface vlan xe0.1005
+ description PTP-BR2:BR1
+ enable
+ ip address 49.128.183.101/30
+!
+interface vlan xe0.1006
+ description PTP-BR2:DR1
+ enable
+ ip address 49.128.177.5/30
+ mtu 2000
+!
+interface vlan xe0.1009
+ description PTP-BR2:DR4
+ enable
+ ip address 49.128.177.25/30
+!
+interface vlan xe0.1011
+ description PTP-BR2:BR3
+ enable
+ ip address 112.78.33.229/30
+!
+interface vlan xe0.1018
+ description PTP-BR2:DR5
+ enable
+ ip address 49.128.177.229/30
+!
+interface vlan xe0.1022
+ description PTP-BR2:DR3T
+ enable
+ ip address 49.128.177.49/30
+ mtu 2000
+!
+interface vlan xe0.1038
+ description PTP-BR2:DR7
+ enable
+ ip address 112.78.33.89/30
+!
+interface vlan xe0.1046
+!
+interface vlan xe0.1049
+ description PTP-BR2:DR1.02-LOKANANTA
+ enable
+ ip address 49.128.177.45/30
+!
+interface vlan xe0.1062
+ description PTP-BR2:DR8
+ enable
+ ip address 203.30.237.197/30
+ mtu 1500
+!
+interface vlan xe0.1074
+ description PTP-BR2:DR2T
+ enable
+ ip address 49.128.176.13/30
+ mtu 2000
+!
+interface vlan xe0.753
+ description ICT-JKT-BIZNET
+ enable
+ ip address 49.128.183.90/30
+!
+interface vlan xe0.919
+ description ICT-JKT-ICON
+ enable
+ ip address 49.128.183.98/30
+ mtu 1500
+!
+interface vlan xe1.161
+ description ICT-JKT-INDOSAT
+ enable
+ ip address 49.128.183.70/30
+!
+interface vlan xe1.331
+ description P4TK-BGP
+ ip address 49.128.176.241/30
+!
+interface vlan xe1.332
+ description JCAMP-BGP
+ enable
+ ip address 203.161.185.201/30
+ ip address 49.128.177.197/30
+!
+interface vlan xe1.344
+ description LTMI-DIY
+ enable
+ ip address 203.30.237.129/30
+!
+interface vlan xe1.666
+ description USD-BGP
+ ip address 49.128.177.221/30
+!
+end
